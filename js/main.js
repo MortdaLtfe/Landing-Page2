@@ -70,39 +70,14 @@ upBtn.onclick = function () {
 }
 // Header
 toggle.onclick = () => {
-  nav.classList.add("show")
-}
-close.onclick = () => {
-  nav.classList.remove("show")
+  toggle.classList.toggle("active")
+  nav.classList.toggle("show")
 }
 // Dropdown 
 var D = 0
 dropToggle.onclick = ()=>{
-  if (D == 0){
-    setTimeout(()=>{
-      drop.style.display = "block"
-    }, 0)
-    setTimeout(()=>{
-      drop.style.transition = ".5s"
-      dropToggle.classList.add("active")
-      
-      drop.classList.add("active")
-      D++      
-    }, 0.5)
-
-  }
-  else if (D == 1){
-    drop.style.transition = ".5s"
-    dropToggle.classList.remove("active")
-    drop.classList.remove("active")
-    setTimeout(()=>{
-      drop.style.display = "none"
-    }, 00)
-    D--
-  } 
+  drop.classList.toggle("show-drop")
 }
-navbar.forEach((a)=>{
-  a.onclick = ()=>{
-    nav.classList.remove("show")
-  }
-})
+navbar.onclick = ()=>{
+  nav.classList.toggle("show")
+}

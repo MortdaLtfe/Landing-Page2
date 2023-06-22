@@ -161,13 +161,23 @@ header .container .brand{
 header .container .toggle{
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  transition: .5s;
+  
 }
 header .container .toggle span{
   margin: 5px 0px;
   background-color: black;
-  height: 3px;
-  width:40px;
-  
+  height: 4px;
+  width:45px;
+}
+header .container .toggle.active{
+}
+header .container .toggle span:nth-child(2){
+  transition: .5s;
+}
+header .container .toggle.active span:nth-child(2){
+  width:5px;
 }
 header .container nav{
   position: absolute;
@@ -213,13 +223,13 @@ header .container nav .drop{
 }
 header .container nav .drop .drop-item{
   background-color: rgba(25, 45, 63, 1);
-  display: none;
-/*   position: relative;
-top:100px;
-left:50px; */
-  width:100%;
+  height:0;
   margin: 0;
   transition: .5s;
+  overflow: hidden;
+}
+header .container nav .drop .drop-item.show-drop{
+  height: 150px;
 }
 header .container nav .drop .drop-item a{
   margin: 0px 0;
@@ -824,6 +834,7 @@ header .container nav ul a:hover{
 }
 .footer .container .fot-4 h4{
   margin: 20px 0px;
+  font-size: 9px;
 }
 .footer .container .fot-4 h4 span{
   color: var(--main-color);
